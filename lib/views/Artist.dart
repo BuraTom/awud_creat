@@ -18,7 +18,7 @@ class _ArtistState extends State<Artist> {
 
   final screens = [
     const DashBoard(),
-    const Stats(),
+    Stats(),
     const Uploads(),
     const Notifications(),
   ];

@@ -77,10 +77,10 @@ class _UploadsState extends State<Uploads> {
                     child: Text('You have no Music Uploaded yet'),
                   ),
                   Center(
-                    child: Text('You have no Podcasr Uploaded yet'),
+                    child: Text('You have no Podcast Uploaded yet'),
                   ),
                   Center(
-                    child: Text('You have Audiobook Uploaded yet'),
+                    child: Text('You have no Audiobook Uploaded yet'),
                   ),
                 ]),
               ),
