@@ -8,7 +8,8 @@ class Notifications extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
-          children: const[
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
             Icon(Icons.notifications_none),
             Text('You have no Notifications yet')
           ],

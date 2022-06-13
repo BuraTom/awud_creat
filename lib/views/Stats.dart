@@ -9,17 +9,16 @@ class Stats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: const [
         DropDown(),
-        SizedBox(height: 10),
+        // SizedBox(height: 10),
         ProgressIndicatorL(),
         PieChartt(),
       ],
     );
   }
 }
-
 
 class DropDown extends StatefulWidget {
   const DropDown({Key? key}) : super(key: key);
@@ -32,7 +31,7 @@ class _DropDownState extends State<DropDown> {
   String dropdownValue = 'yesterday';
   @override
   Widget build(BuildContext context) {
-    return    DropdownButton<String>(
+    return DropdownButton<String>(
       borderRadius: BorderRadius.circular(5.0),
       value: dropdownValue,
       icon: const Icon(Icons.arrow_downward),
@@ -43,14 +42,13 @@ class _DropDownState extends State<DropDown> {
         color: Colors.deepPurpleAccent,
       ),
       onChanged: (String? newValue) {
-    setState(() {
-    dropdownValue = newValue!;
-    });
-    },
+        setState(() {
+          dropdownValue = newValue!;
+        });
+      },
       items: <String>['yesterday', 'last 7days', 'last month', 'total']
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
-
           value: value,
           child: Text(value),
         );
@@ -58,7 +56,6 @@ class _DropDownState extends State<DropDown> {
     );
   }
 }
-
 
 class ProgressIndicatorL extends StatefulWidget {
   const ProgressIndicatorL({Key? key}) : super(key: key);
@@ -94,8 +91,6 @@ class _ProgressIndicatorLState extends State<ProgressIndicatorL> {
   }
 }
 
-
-
 class PieChartt extends StatefulWidget {
   const PieChartt({Key? key}) : super(key: key);
 
@@ -122,7 +117,7 @@ class _PieCharttState extends State<PieChartt> {
   ];
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
+    return Expanded(
       child: Card(
         elevation: 5.0,
         child: Column(children: [
@@ -197,14 +192,10 @@ class _PieCharttState extends State<PieChartt> {
     );
   }
 }
+
 class _StreamData {
   _StreamData(this.year, this.streams);
 
   final String year;
   final double streams;
 }
-
-
-
-
-
