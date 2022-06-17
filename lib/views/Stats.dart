@@ -303,36 +303,36 @@ class _DropDownState extends State<DropDown> {
   }
 }
 
-class ProgressIndicatorL extends StatefulWidget {
-  const ProgressIndicatorL({Key? key}) : super(key: key);
+// class ProgressIndicatorL extends StatefulWidget {
+//   const ProgressIndicatorL({Key? key}) : super(key: key);
 
-  @override
-  _ProgressIndicatorLState createState() => _ProgressIndicatorLState();
-}
+//   @override
+//   _ProgressIndicatorLState createState() => _ProgressIndicatorLState();
+// }
 
-class _ProgressIndicatorLState extends State<ProgressIndicatorL> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: LinearPercentIndicator(
-              trailing: Text('female'),
-              animation: true,
-              lineHeight: 20.0,
-              animationDuration: 2000,
-              percent: 0.9,
-              center: const Text("90.0%"),
-              linearStrokeCap: LinearStrokeCap.roundAll,
-              progressColor: Colors.greenAccent,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+// class _ProgressIndicatorLState extends State<ProgressIndicatorL> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       alignment: Alignment.center,
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: <Widget>[
+//           Padding(
+//             padding: const EdgeInsets.all(15.0),
+//             child: LinearPercentIndicator(
+//               trailing: Text('female'),
+//               animation: true,
+//               lineHeight: 20.0,
+//               animationDuration: 2000,
+//               percent: 0.9,
+//               center: const Text("90.0%"),
+//               linearStrokeCap: LinearStrokeCap.roundAll,
+//               progressColor: Colors.greenAccent,
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
