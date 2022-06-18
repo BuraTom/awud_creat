@@ -1,26 +1,46 @@
 import 'package:awud_creat/views/Dashboard.dart';
-import 'package:awud_creat/views/Notification.dart';
+import 'package:awud_creat/views/home_page.dart';
+import 'package:awud_creat/views/settings.dart';
 import 'package:awud_creat/views/Upload.dart';
 import 'package:awud_creat/views/Stats.dart';
 import 'package:flutter/material.dart';
 //import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:awud_creat/classes/language_constants.dart';
 
 class Artist extends StatefulWidget {
   Artist({Key? key}) : super(key: key);
 
   @override
   State<Artist> createState() => _ArtistState();
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _ArtistState? state = context.findAncestorStateOfType<_ArtistState>();
+    state?.setLocale(newLocale);
+  }
 }
 
 class _ArtistState extends State<Artist> {
-  var _index = 0;
+  Locale? _locale;
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
+  @override
+  void didChangeDependencies() {
+    getLocale().then((locale) => {setLocale(locale)});
+    super.didChangeDependencies();
+  }
+
+  var _index = 0;
   final screens = [
     const DashBoard(),
     Stats(),
     const Uploads(),
-    const Notifications(),
+    // HomePage(),
+    Setting(),
   ];
 
   PageController controller = PageController();
@@ -42,6 +62,9 @@ class _ArtistState extends State<Artist> {
         //     appBarTheme: AppBarTheme(
         //       backgroundColor: Colors.black,
         //     )),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: _locale,
         home: Scaffold(
           // backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           body: PageView.builder(
@@ -71,7 +94,7 @@ class _ArtistState extends State<Artist> {
                 ),
                 GButton(icon: Icons.query_stats, text: "Stats"),
                 GButton(icon: Icons.upload, text: "Uploads"),
-                GButton(icon: Icons.notifications, text: "Notification"),
+                GButton(icon: Icons.settings, text: "Settings"),
               ],
               selectedIndex: _index,
               onTabChange: (index) {

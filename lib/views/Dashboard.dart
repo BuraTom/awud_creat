@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:awud_creat/classes/language_constants.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class DashBoard extends StatelessWidget {
                       // ),
                       //  elevation: 0,
                       // backgroundColor: Color.fromRGBO(248, 135, 88, 1),
-                      title: const Text(
-                        "DashBoard",
+                      title: Text(
+                        translation(context).dash,
                         style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
@@ -141,9 +142,10 @@ class QuickStats extends StatelessWidget {
     return Container(
       height: 160.0,
       width: 160.0,
+      // color: Color.fromARGB(255, 141, 78, 78)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: Color.fromARGB(255, 88, 88, 88)),
+          color: Color.fromARGB(255, 164, 58, 58)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -182,8 +184,8 @@ class QuickStats extends StatelessWidget {
         children: [
           CustomContainerforQuickStats(Icon(Icons.play_arrow), '40K', 'Plays'),
           SizedBox(width: 12),
-          CustomContainerforQuickStats(
-              Icon(Icons.person_add_outlined), '40K', 'Followers'),
+          // CustomContainerforQuickStats(
+          //     Icon(Icons.person_add_outlined), '40K', 'Followers'),
           SizedBox(width: 12),
           CustomContainerforQuickStats(Icon(Icons.person), '40K', 'Listeners'),
           SizedBox(width: 12),
@@ -238,8 +240,8 @@ class Milestone extends StatelessWidget {
             CustomColumnforMilestone(
                 AssetImage('assets/images/playlistAdd.png'), "PlayList Adds"),
             SizedBox(width: 10),
-            CustomColumnforMilestone(
-                AssetImage('assets/images/follow.png'), "Followers"),
+            // CustomColumnforMilestone(
+            //     AssetImage('assets/images/follow.png'), "Followers"),
           ],
         ),
       ),
