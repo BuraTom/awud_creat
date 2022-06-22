@@ -1,3 +1,4 @@
+import 'package:awud_creat/classes/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class Contents extends StatefulWidget {
@@ -12,7 +13,7 @@ class _ContentsState extends State<Contents> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Contents'),
+          title: Text(translation(context).con),
         ),
         body: ListView.builder(itemBuilder: (BuildContext context, int index) {
           return Container();

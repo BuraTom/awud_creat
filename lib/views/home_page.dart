@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(translation(context).homePage),
+        title: Text(translation(context).st),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Text(
-          translation(context).personalInformation,
+          translation(context).changelang,
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 30,

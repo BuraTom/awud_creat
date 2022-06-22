@@ -60,16 +60,16 @@ class DashBoard extends StatelessWidget {
                             child: Align(
                               alignment: Alignment.centerLeft,
                               child: RichText(
-                                text: const TextSpan(children: <TextSpan>[
+                                text: TextSpan(children: <TextSpan>[
                                   TextSpan(
-                                    text: 'QUICK STATS',
+                                    text: translation(context).qu,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18),
                                   ),
                                   TextSpan(
-                                    text: ' Last 7 days(Estimated)',
+                                    text: translation(context).lp,
                                     style: TextStyle(
                                         color: Colors.grey, fontSize: 10),
                                   )
@@ -108,7 +108,7 @@ class DashBoard extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "TOP PERFORMING CONTENTS",
+                                        translation(context).tp,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18),
@@ -116,7 +116,7 @@ class DashBoard extends StatelessWidget {
                                       InkWell(
                                         onTap: () => {print('music')},
                                         child: Text(
-                                          "VIEW ALL",
+                                          translation(context).va,
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 12,
@@ -182,15 +182,17 @@ class QuickStats extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: Row(
         children: [
-          CustomContainerforQuickStats(Icon(Icons.play_arrow), '40K', 'Plays'),
+          CustomContainerforQuickStats(
+              Icon(Icons.play_arrow), '40K', translation(context).pla),
           SizedBox(width: 12),
           // CustomContainerforQuickStats(
           //     Icon(Icons.person_add_outlined), '40K', 'Followers'),
           SizedBox(width: 12),
-          CustomContainerforQuickStats(Icon(Icons.person), '40K', 'Listeners'),
+          CustomContainerforQuickStats(
+              Icon(Icons.person), '40K', translation(context).lis),
           SizedBox(width: 12),
           CustomContainerforQuickStats(
-              Icon(Icons.money), '40K', 'Money earned'),
+              Icon(Icons.money), '40K', translation(context).me),
         ],
       ),
     );
@@ -202,14 +204,9 @@ class Milestone extends StatelessWidget {
   Widget CustomColumnforMilestone(img, txt) {
     return Column(
       children: [
-        GestureDetector(
-          onTap: () {
-            print('HI');
-          },
-          child: CircleAvatar(
-            backgroundImage: img,
-            radius: 60,
-          ),
+        CircleAvatar(
+          backgroundImage: img,
+          radius: 60,
         ),
         SizedBox(height: 10),
         Text(
@@ -229,16 +226,17 @@ class Milestone extends StatelessWidget {
         child: Row(
           children: [
             CustomColumnforMilestone(
-                AssetImage('assets/images/Mill.png'), "1 Million Plays"),
+                AssetImage('assets/images/play.png'), translation(context).pla),
             SizedBox(width: 10),
             CustomColumnforMilestone(
-                AssetImage('assets/images/money.png'), "Money earned"),
+                AssetImage('assets/images/money.png'), translation(context).me),
+            SizedBox(width: 10),
+            CustomColumnforMilestone(AssetImage('assets/images/FavAdd.png'),
+                translation(context).fav),
             SizedBox(width: 10),
             CustomColumnforMilestone(
-                AssetImage('assets/images/FavAdd.png'), "Favourites"),
-            SizedBox(width: 10),
-            CustomColumnforMilestone(
-                AssetImage('assets/images/playlistAdd.png'), "PlayList Adds"),
+                AssetImage('assets/images/playlistAdd.png'),
+                translation(context).pa),
             SizedBox(width: 10),
             // CustomColumnforMilestone(
             //     AssetImage('assets/images/follow.png'), "Followers"),
@@ -273,10 +271,10 @@ class Performance extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomColumnforPerformance('20K ', 'PLAYS'),
-              CustomColumnforPerformance('12K ', 'Favs'),
-              CustomColumnforPerformance('14K ', 'likes'),
-              CustomColumnforPerformance('23K ', 'downloads'),
+              CustomColumnforPerformance('20K ', translation(ct).pla),
+              CustomColumnforPerformance('12K ', translation(ct).fav),
+              CustomColumnforPerformance('14K ', translation(ct).lk),
+              CustomColumnforPerformance('23K ', translation(ct).dws),
             ],
           ),
         ],
