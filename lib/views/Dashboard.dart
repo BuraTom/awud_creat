@@ -87,10 +87,10 @@ class DashBoard extends StatelessWidget {
                               children: [
                                 Container(
                                   margin: EdgeInsets.only(left: 5),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      "MILESTONES & ACHIEVEMENTS",
+                                      translation(context).mar,
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 18),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:awud_creat/classes/language.dart';
 import 'package:awud_creat/classes/language_constants.dart';
 import 'package:awud_creat/views/Artist.dart';
@@ -170,7 +172,12 @@ class _SettingState extends State<Setting> {
               SizedBox(height: 10),
               Center(
                 child: OutlinedButton(
-                  onPressed: () => {},
+                  onPressed: () => {
+                    exit(0)
+                    //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                    // sharedPreferences.remove('token');
+                    // print(sharedPreferences.get('token'));
+                  },
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     shape: RoundedRectangleBorder(
